@@ -3,7 +3,7 @@
 @section('content')
 <h1><center>Jabatan</center></h1>
 	<table border="1" class="table table-striped table-border table-hover">
-		<a class="btn btn-primary" href="{{url('jabatan/create')}}">Tambah Data</a><br><br>
+		<center><a class="btn btn-primary" href="{{url('jabatan/create')}}">Tambah Data</a></center><br><br>
 			<table class="table table-striped table-bordered table-hover">
 				<thead>
 					<tr class="bg-primary">

@@ -1,8 +1,10 @@
 @extends('layouts.app')
 @section('content')
-			        <div class="col-md-6 col-md-offset-0">
-			            <div class="panel panel-primary">
-			                <div class="panel-heading">Data Pegawai</div>
+<h1><center>Pegawai</center></h1>
+
+	<div class="col-md-6 col-md-offset-0">
+<div class="panel panel-primary">
+			     <div class="panel-heading">Data Pegawai</div>
 			                <div class="panel-body">
 			                	<table border="2" class="table table-success table-border table-hover">
 									<thead >

@@ -165,9 +165,7 @@ class PegawaiController extends Controller
             'jabatan_id'=>'required',
             'golongan_id'=>'required',
             'photo'=>'required',
-            'name' => 'required|max:255',
-            'permision' => 'required',
-            'email' => 'required|email|max:255|unique:users',
+            
         ];
         }
         else{
@@ -176,9 +174,7 @@ class PegawaiController extends Controller
             'jabatan_id'=>'required',
             'golongan_id'=>'required',
             'photo'=>'required',
-            'name' => 'required|max:255',
-            'permision' => 'required',
-            'email' => 'required|email|max:255',
+            
         ];
         }
         $juda=[
@@ -187,14 +183,7 @@ class PegawaiController extends Controller
             'jabatan_id.required'=>'Wajib Diisi',
             'golongan_id.required'=>'Wajib Diisi',
             'photo.required'=>'Wajib Diisi',
-            'name.required'=>'Wajib Diisi',
-            'name.max'=>'max 255',
-            'permision.required'=>'Wajib Diisi',
-            'email.required'=>'Wajib Diisi',
-            'email.email'=>'harus berbentuk email',
-            'email.max'=>'max 255',
-            'email.unique'=>'e-mail sudah ada',
-            
+                     
         ];
         $validasi=Validator::make(Input::all(),$jud,$juda);
         if($validasi->fails()){
@@ -202,12 +191,7 @@ class PegawaiController extends Controller
                 ->WithErrors($validasi)
                 ->WithInput();
         }
-        $user=User::find($pegawai->user_id);
-        $user->name = Request('name');
-        $user->type_user = Request('permision');
-        $user->email = Request('email');
-        $user->save();
-        
+      
         $file= Input::file('photo');
         $destination= '/assets/image/';
         $filename=$file->getClientOriginalName();
@@ -217,7 +201,7 @@ class PegawaiController extends Controller
         
             $pegawai =Pegawai::find($id);
             $pegawai->nip = Request('nip');
-            $pegawai->permision = $user->id;
+            
             $pegawai->jabatan_id = Request('jabatan_id');
             $pegawai->golongan_id = Request('golongan_id');
             $pegawai->photo=$filename;

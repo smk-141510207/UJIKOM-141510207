@@ -133,7 +133,7 @@ class TunjanganpController extends Controller
 
             $update=Request::all();
             $tunjanganp=TunjanganPegawai::find($id);
-            $tunjanganp->update($update);
+            $tunjanganp->save($update);
             return redirect('tunjangpegawai');
     }
 

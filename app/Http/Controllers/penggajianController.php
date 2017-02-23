@@ -151,6 +151,16 @@ public function index()
     public function edit($id)
     {
         //
+          $gaji=Penggajian::find($id);
+
+        $penggajian=new Penggajian ;
+
+        $penggajian=array('status_pengambilan'=>1,'tgl_pengambilan'=>date('y-m-d'));
+
+        Penggajian::where('id',$id)->update($penggajian);
+
+        return redirect('penggajian');
+
     }
 
     /**

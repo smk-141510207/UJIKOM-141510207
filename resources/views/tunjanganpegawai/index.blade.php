@@ -4,7 +4,7 @@
 
 <center><h1>Tunjangan Pegawai<h1></center>
 	<table border="1" class="table table-striped table-border table-hover">
-		<thead><a class="btn btn-primary" href="{{url('tunjangpegawai/create')}}"><center>Tambah Data</center></a><br><br>
+		<thead><center><a class="btn btn-primary" href="{{url('tunjangpegawai/create')}}">Tambah Data</center></a><br><br>
 			<table class="table table-striped table-bordered table-hover">
 				<thead>
 					<tr class="bg-primary">
