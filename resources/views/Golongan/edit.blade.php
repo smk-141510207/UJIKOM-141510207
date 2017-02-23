@@ -1,0 +1,40 @@
+@extends('layouts.app')
+
+@section('content')
+	
+<div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading"><center><h2>Edit Golongan</h2></center></div>
+                <div class="panel-body">
+			<form method="POST" action="{{route('golongan.update', $golongan->id)}}">
+				<input type="hidden" name="_method" value="PATCH">
+			 	{{csrf_field()}}
+				<div class="form-group">
+					<label>Kode Golongan</label>
+					<input class="form-control" type="text" name="kode_golongan" value="{{$golongan->kode_golongan}}">
+				</div>
+
+				<div class="form-group">
+					<label>Nama Golongan</label>
+					<input class="form-control" type="text" name="nama_golongan" value="{{$golongan->nama_golongan}}">
+				</div>
+
+				<div class="form-group">
+					<label>Besaran Uang</label>
+					<input class="form-control" type="text" name="besaran_uang" value="{{$golongan->besaran_uang}}">
+				</div>
+
+				<div class="form-group">
+                    <div class="col-md-6 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary form-control">
+						Simpan
+                        </button>
+                     </div>
+                </div>
+			</form>
+		</div>
+	</div>
+</div>
+
+@stop
